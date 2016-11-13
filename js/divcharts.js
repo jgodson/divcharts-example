@@ -91,7 +91,7 @@ var el = document.getElementById('container');
 var ops = {
   type: 'bar', // doesn't currently do anything
   id: 1, // Each should have id to allow for css customization
-  label_height: 40, // specify height for labels (then increase font-sizes using css)
+  label_height: 20, // specify height for labels (then increase font-sizes using css)
   bar_width: 25, // can specify chart bar widths here (in %)
   data: {
     "Windows": { // This is also the label for this bar

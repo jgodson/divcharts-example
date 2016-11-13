@@ -26,10 +26,6 @@ h6 {
   height: 40%;
 }
 
-#divchart-1 .divchart-labels {
-  font-size: 40px;
-}
-
 #divchart-1 .divchart-data-1-bar {
   background-color: #20f76b;
 }
