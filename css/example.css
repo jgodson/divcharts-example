@@ -1,0 +1,43 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #d7dde0;
+}
+
+.center-text {
+  text-align: center;
+}
+
+h2 {
+  margin: 5px;
+}
+
+h2:not(:first-of-type) {
+  margin-top: 25px;
+}
+
+h6 {
+  margin: 0;
+}
+
+#container, #container2 {
+  height: 40%;
+}
+
+#divchart-1 .divchart-labels {
+  font-size: 40px;
+}
+
+#divchart-1 .divchart-data-1-bar {
+  background-color: #20f76b;
+}
+
+#divchart-1 .divchart-data-2-bar {
+  background-color: #ed6240;
+}
+
+#divchart-1 .divchart-data-3-bar {
+  background-color: #499add;
+}
