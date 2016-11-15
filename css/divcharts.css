@@ -1,11 +1,10 @@
 .divchart-bar {
   display: inline-block;
+  position: relative;
 }
 
 .divchart-container {
-  display: inline-block;
   height: 100%;
-  width: 100%;
 }
 
 .divchart-data-bar {
@@ -19,16 +18,42 @@
 .divchart-labels {
   overflow: hidden;
   position: relative;
-  top: -3px;
-  border-top: 1px solid grey;
+  top: -4px;
+  border-top: 2px solid grey;
   font-size: 20px;
 }
 
 .divchart-labels span {
   display: inline-block;
-  position:relative;
+  position: relative;
   top: -3px;
   text-align: center;
   overflow: hidden;
   vertical-align: middle;
+}
+
+.divchart-bar:hover > .divchart-tooltip {
+  opacity: 1;
+}
+
+.divchart-tooltip {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.divchart-tooltip p {
+  position: relative;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20% 0;
+}
+
+@media screen and (min-width: 768px) {
+  .divchart-tooltip p {
+    margin: 30% 25%;
+  }
 }

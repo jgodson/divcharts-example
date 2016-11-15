@@ -63,7 +63,7 @@ function DivChart(element, options) {
       self._options.data[key].percentage = self._options.data[key].value / maxValue * 100; // set percentage
     });
   }
-  
+
   function drawChart() {
     var self = this;
     var html = "";
@@ -74,7 +74,19 @@ function DivChart(element, options) {
         + "%;'>" + id + "</span>";
       html += "<div class='divchart-bar divchart-chart-" + dataID + "' style='height: calc(100% - " 
         + self._options.label_height + "px); width: " + (self._options.data[id].width || self._options.bar_width) 
-        + "%;'>";
+        + "%;' ontouchstart=''>"; // ontouchstart allows the hover css to work
+
+      // Create tooltip div
+      if (self._options.tooltip) {
+        html += "<div class='divchart-tooltip'><p>" 
+          + (self._options.data[id].value || self._options.data[id].percentage);
+        if (self._options.data[id].units || self._options.default_units) {
+          if (self._options.data[id].units) html += self._options.data[id].units;
+          else html += self._options.default_units;
+        }
+        html += "</p></div>";
+      }
+
       html += "<div class='divchart-space divchart-data-" + dataID + "-space' style='height: calc(100% - " 
         + self._options.data[id].percentage + "%);'></div>";
       html += "<div class='divchart-data-bar divchart-data-" + dataID + "-bar' style='height: calc(100% - " 
@@ -93,6 +105,8 @@ var ops = {
   id: 1, // Each should have id to allow for css customization
   label_height: 20, // specify height for labels (then increase font-sizes using css)
   bar_width: 25, // can specify chart bar widths here (in %)
+  default_units: '%',
+  tooltip: true,
   data: {
     "Windows": { // This is also the label for this bar
       id: 1, // id used for css selector
@@ -117,6 +131,8 @@ ops = {
   type: 'bar',
   id: 2,
   label_height: 20,
+  default_units: '%',
+  tooltip: true,
   data: {
     "Java": { // This is also the label for this bar
       id: 1, // id used for css selector
